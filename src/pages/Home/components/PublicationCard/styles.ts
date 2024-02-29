@@ -22,6 +22,7 @@ export const Card = styled.div`
 
     > h3 {
       line-height: 1.8rem;
+      color: ${(props) => props.theme.slate300};
     }
 
     > span {
