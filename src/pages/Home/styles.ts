@@ -13,10 +13,18 @@ export const HomeContainer = styled.div`
 
       > h3 {
         font-weight: 500;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
 
       > p {
         color: ${(props) => props.theme.slate400};
+
+        @media (max-width: 768px) {
+          font-size: 0.8rem;
+        }
       }
     }
 
@@ -29,6 +37,10 @@ export const HomeContainer = styled.div`
       font-size: 1rem;
       transition: 0.5s;
       outline: none;
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+      }
 
       &::placeholder {
         color: ${(props) => props.theme.slate400};
@@ -44,5 +56,9 @@ export const HomeContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
   }
 `;

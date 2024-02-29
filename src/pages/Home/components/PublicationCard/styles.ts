@@ -23,6 +23,11 @@ export const Card = styled.div`
     > h3 {
       line-height: 1.8rem;
       color: ${(props) => props.theme.slate300};
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.6rem;
+      }
     }
 
     > span {
@@ -30,11 +35,20 @@ export const Card = styled.div`
       text-align: end;
       font-size: 0.9rem;
       color: ${(props) => props.theme.slate500};
+
+      @media (max-width: 768px) {
+        width: 4.8rem;
+      }
     }
   }
 
   > p {
     line-height: 1.6rem;
     color: ${(props) => props.theme.slate500};
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+    }
   }
 `;
