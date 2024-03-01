@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const TitleAndDetailsBox = styled.header`
+export const TitleAndDetailsBox = styled(motion.header)`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const ProfileBox = styled.div`
+export const ProfileBox = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 2rem;

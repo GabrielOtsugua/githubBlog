@@ -9,7 +9,11 @@ import profileImage from "../../../../assets/profileImage.svg";
 
 export function Profile() {
   return (
-    <ProfileBox>
+    <ProfileBox
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2 }}
+    >
       <figure>
         <img src={profileImage} alt="" />
       </figure>

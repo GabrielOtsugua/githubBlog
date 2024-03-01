@@ -1,12 +1,17 @@
 import { TitleAndDetails } from "./components/TitleAndDetails";
 import { PublicationContainer } from "./styles";
+import { motion } from "framer-motion";
 
 export function Publication() {
   return (
     <PublicationContainer>
       <TitleAndDetails />
 
-      <main>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <p>
           Programming languages all have built-in data structures, but these
           often differ from one language to another. This article attempts to
@@ -30,7 +35,7 @@ export function Publication() {
           <p>foo = 'bar';</p>
           <p>foo = true;</p>
         </code>
-      </main>
+      </motion.main>
     </PublicationContainer>
   );
 }

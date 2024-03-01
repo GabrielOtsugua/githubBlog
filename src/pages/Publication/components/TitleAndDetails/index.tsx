@@ -10,7 +10,11 @@ import { Link } from "react-router-dom";
 
 export function TitleAndDetails() {
   return (
-    <TitleAndDetailsBox>
+    <TitleAndDetailsBox
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2 }}
+    >
       <nav>
         <Link to="/" style={{ textDecoration: 0 }}>
           <span>
