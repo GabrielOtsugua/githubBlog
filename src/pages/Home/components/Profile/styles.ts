@@ -31,6 +31,7 @@ export const ProfileBox = styled(motion.div)`
 
   > figure {
     border-radius: 1rem;
+    width: 12rem;
 
     > img {
       border-radius: 1rem;
@@ -69,6 +70,7 @@ export const ProfileHeader = styled.header`
   > h1 {
     color: ${(props) => props.theme.slate100};
     font-weight: 400;
+    letter-spacing: 0.1rem;
 
     @media (max-width: 768px) {
       font-size: 1.4rem;
@@ -79,7 +81,7 @@ export const ProfileHeader = styled.header`
     }
   }
 
-  > span {
+  span {
     display: flex;
     align-items: end;
     gap: 0.5rem;

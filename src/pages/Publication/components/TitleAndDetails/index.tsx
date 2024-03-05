@@ -7,8 +7,15 @@ import {
 } from "@phosphor-icons/react";
 import { TitleAndDetailsBox } from "./styles";
 import { Link } from "react-router-dom";
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
+import { Issue } from "../../../../@types/interfaces";
 
-export function TitleAndDetails() {
+interface TitleAndDetailsProps {
+  issue: Issue;
+}
+
+export function TitleAndDetails({ issue }: TitleAndDetailsProps) {
   return (
     <TitleAndDetailsBox
       initial={{ opacity: 0, y: -20 }}
@@ -23,7 +30,12 @@ export function TitleAndDetails() {
           </span>
         </Link>
 
-        <Link to="" style={{ textDecoration: 0 }}>
+        <Link
+          to={issue?.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: 0 }}
+        >
           <span>
             <p>VER NO GITHUB</p>
             <ArrowSquareOut size={20} weight="fill" />
@@ -31,20 +43,25 @@ export function TitleAndDetails() {
         </Link>
       </nav>
 
-      <h1>JavaScript data types and data structures</h1>
+      <h1>{issue?.title}</h1>
 
       <div>
         <span>
           <GithubLogo size={20} weight="fill" />
-          <p>gabriel</p>
+          <p>{issue?.user.login}</p>
         </span>
         <span>
           <Calendar size={20} weight="fill" />
-          <p>Há 1 dia</p>
+          <p>
+            {formatDistanceToNow(issue.created_at, {
+              addSuffix: true,
+              locale: ptBR,
+            })}
+          </p>
         </span>
         <span>
           <ChatCircle size={20} weight="fill" />
-          <p>5 comentários</p>
+          <p>{issue?.comments} comentários</p>
         </span>
       </div>
     </TitleAndDetailsBox>
