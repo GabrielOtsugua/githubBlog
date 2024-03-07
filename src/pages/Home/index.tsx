@@ -50,7 +50,11 @@ export function Home() {
           >
             <label htmlFor="">
               <h3>Publicações</h3>
-              <p>6 publicações</p>
+              <p>
+                {issues.length === 1
+                  ? `${issues.length} publicação`
+                  : `${issues.length} publicações`}
+              </p>
             </label>
 
             <input
